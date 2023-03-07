@@ -1,32 +1,32 @@
-# En este caso, nuestro objetivo es averiguar exactamente la cantidad de propina que hay que proporcionar después de un servicio. En este caso, hay que solicitar la factura total. Con esto, aplicaremos la propina para el 18%, 20% y 25%.
+# In this case, our goal is to find out exactly how much tip to provide after a service. In this case, you must request the total invoice. With this, we will apply the tip for 18%, 20% and 25%.
 
-# Se calcula el porcentaje de propina que se les cobrará a los comenzales
-factura = ''
-while str(type(factura))!= "<class 'float'>":
+# The percentage of tip that will be charged to diners is calculated
+bill = ''
+while str(type(bill))!= "<class 'float'>":
     try:
-        factura = float(input('¿Cuál es la factura total de hoy, por favor? '))
+        bill = float(input('What is the total bill for today please? '))
     except:
         pass
-if factura > 0: propina = 18
-if factura > 99.99999: propina = 20
-if factura > 199.9999: propina = 25
-# Se pide el número de comezales 
-comenzales = ''
-while str(type(comenzales))!= "<class 'int'>":
+if bill > 0: tip = 18
+if bill > 99.99999: tip = 20
+if bill > 199.9999: tip = 25
+# The number of diners is requested 
+diners = ''
+while str(type(diners))!= "<class 'int'>":
     try:
-        comenzales = int(input('¿Cuanto comenzales son? '))
+        diners = int(input('How many diners are they? '))
     except:
         pass
-# Se le pregunta al usuario si desea divir la cuenta en partes iguales o si prefiere usar una distribución distinta
-pesos = ''
-desicion = ''
-while desicion not in {'si','no'}:
-    desicion = input('Desea devidir la cuenta en partes iguales, si o no? ').lower()
-    if desicion == 'no':
-        while len(pesos) != comenzales:
-            pesos = input('Introduzca el porcentajes en los que desea divir la comida y asegurese que sumen 100% ').split(',')
-            print(f'La propina aplicando el {propina}% es ${round(factura*(propina/100),2)}, que contabiliza un total de ${round(factura*(1 + propina/100),2)} y les toca de a:')
-            for i in range(len(pesos)):
-                print(f'Al comenzal {i+1} le toca ${round(factura*(1 + propina/100)*(float(pesos[i])/100),2)}')
-    if desicion == 'si':
-        print(f'La propina aplicando el {propina}% es ${round(factura*(propina/100),2)}, que contabiliza un total de ${round(factura*(1 + propina/100),2)} y les toca de a {round(factura*(1 + propina/100)*(1/comenzales),2)}')
+# The user is asked if they want to divide the account equally or if they prefer to use a different distribution
+weighings = ''
+choice = ''
+while choice not in {'yes','no'}:
+    choice = input('Do you want to split the bill equally, yes or no? ').lower()
+    if choice == 'no':
+        while len(weighings) != diners:
+            weighings = input('Enter the percentages you want to divide the food into separated by commas and make sure they add up to 100% ').split(',')
+            print(f'The tip applying {tip}% is ${round(bill*(tip/100),2)}, which accounts for a total of ${round(bill*(1 + tip/100),2)} and they get:')
+            for i in range(len(weighings)):
+                print(f'Diner {i+1} gets ${round(bill*(1 + tip/100)*(float(weighings[i])/100),2)}')
+    if choice == 'yes':
+        print(f'The tip applying {tip}% is ${round(bill*(tip/100),2)}, which accounts for a total of ${round(bill*(1 + tip/100),2)} and they get {round(bill*(1 + tip/100)*(1/diners),2)}')
