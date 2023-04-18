@@ -13,4 +13,6 @@ def to_camel_case(text):
     text = ''.join(text)
     return text
 
-to_camel_case('the-stealth-warrior')
+sentence = input('Ingress a sentence to convert a camelCase: ')
+camel = to_camel_case(sentence)
+print(f'The sentence {sentence} is {camel} in camelCase')
