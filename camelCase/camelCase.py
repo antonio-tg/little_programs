@@ -5,13 +5,12 @@
 #"The_Stealth_Warrior" gets converted to "TheStealthWarrior"
 #"The_Stealth-Warrior" gets converted to "TheStealthWarrior"
 
+import re
 def to_camel_case(text):
-    if '-' in text: text = text.split('-')
-    if '_' in text: text = text.split('_')
+    text = re.split('[-_]',text)
     for i in range(1,len(text)):
         text[i] = text[i].capitalize()
     text = ''.join(text)
-    print(text)
     return text
 
 to_camel_case('the-stealth-warrior')
