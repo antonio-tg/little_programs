@@ -15,6 +15,6 @@ b = input('please enter the numbers b: ')
 c = input('please enter the numbers c: ')
 triangle = is_triangle(int(a),int(b),int(c))
 if triangle:
-    print(f'You can triangle can be constructed with the sides {a}, {b}, {c}')
+    print(f'You can build a triangle with the sides {a}, {b}, {c}')
 else:
     print(f'You cannot build a triangle with the sides {a}, {b}, {c}')
