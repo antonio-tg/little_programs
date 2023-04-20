@@ -2,7 +2,7 @@
 
 # (In this case, all triangles must have surface greater than 0 to be accepted).
 
-# To solve this we will use the triangle inequality
+# To solve this we will use the triangle inequality c < a + b
 
 def is_triangle(a, b, c):
     if a < b + c and b < a + c and c < a + b:
