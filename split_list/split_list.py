@@ -12,7 +12,7 @@ def crea_lis(var_list,lis):
         for fin in range(lot, len(lis) + lot, lot):
             query = query + '(' + str(lis[ini:fin]).replace('[','').replace(']','') + ') OR '+ var_list+' IN '
             ini = fin
-        query = query[:-14]
+        query = query[:-15]
     return query
 
 print(crea_lis('IDSALDO',list(range(60))))
